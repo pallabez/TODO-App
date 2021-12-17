@@ -7,6 +7,18 @@
     <title><%= title %></title>
 </head>
 <body>
-    hey
+    <div class = "wrapper">
+        <h1>TODO App</h1>
+        <div>
+            <form action="/create-task" method="POST">
+                <label for="description">Description</label>
+                <textarea id="description" name="description" rows="4" cols="50"></textarea>
+
+                <input type="date" name="date" required>
+
+                <button type="submit">ADD TASK</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
