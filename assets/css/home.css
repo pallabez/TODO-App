@@ -1,6 +1,7 @@
 :root {
     --primary-border-color :rgba(83, 92, 87, 0.13);
     --primary-color: rgb(83, 92, 87);
+    --primary-background-color: #efefef;
     --secondary-background-color: #5a5a5a;
 }
 
@@ -21,7 +22,7 @@
 
 
 .wrapper {
-    background-color: #8f8f8f;
+    background-color: var(--secondary-background-color);
     width: 100vw;
     height: 100vh;
 
@@ -30,7 +31,7 @@
 }
 
 .wrapper .section{
-    background-color: #efefef;
+    background-color: var(--primary-background-color);
     width: 60%;
     height: min-content;
     padding: 1rem 0;
@@ -42,15 +43,16 @@
 
 .wrapper .section form .field {
     width: 100%;
-    height: -webkit-fill-available;
 
     border-top: 1px solid var(--primary-border-color);
     border-bottom: 1px solid var(--primary-border-color);
 }
 
 .field-section {
-    padding-top: 10px;
+    padding-top: 0.7rem;
     padding-bottom: 1.4rem;
+    padding-left: 1rem;
+    flex-grow: 1;
 }
 
 .field-name {
@@ -58,19 +60,15 @@
     font-size: 0.8rem;
 }
 
-#description input, #category select, #date input {
+.field-section input, .field-section select{
     border: none;
     background-color: transparent;
 }
 
-#description input:focus, #category select:focus, #date input:focus {
+.field-section input:focus, .field-section select:focus{
     outline: none;
 }
 
-#description, #category, #date {
-    padding-left: 1rem;
-    flex-grow: 1;
-}
 
 #other-details {
     display: flex;
@@ -78,10 +76,10 @@
 }
 
 #description input {
-    height: 1.3rem;
     width: -webkit-fill-available;
 }
 
 #date {
     border-left: 1px solid var(--primary-border-color);
 }
+
