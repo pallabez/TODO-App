@@ -1,0 +1,87 @@
+:root {
+    --primary-border-color :rgba(83, 92, 87, 0.13);
+    --primary-color: rgb(83, 92, 87);
+    --secondary-background-color: #5a5a5a;
+}
+
+::placeholder {
+    color:rgba(100, 100, 100, 0.349);
+}
+
+*{
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "system-ui";
+    color: var(--primary-color);
+}
+
+
+
+.wrapper {
+    background-color: #8f8f8f;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper .section{
+    background-color: #efefef;
+    width: 60%;
+    height: min-content;
+    padding: 1rem 0;
+}
+
+.wrapper .section > .heading {
+    text-align: center;
+}
+
+.wrapper .section form .field {
+    width: 100%;
+    height: -webkit-fill-available;
+
+    border-top: 1px solid var(--primary-border-color);
+    border-bottom: 1px solid var(--primary-border-color);
+}
+
+.field-section {
+    padding-top: 10px;
+    padding-bottom: 1.4rem;
+}
+
+.field-name {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+#description input, #category select, #date input {
+    border: none;
+    background-color: transparent;
+}
+
+#description input:focus, #category select:focus, #date input:focus {
+    outline: none;
+}
+
+#description, #category, #date {
+    padding-left: 1rem;
+    flex-grow: 1;
+}
+
+#other-details {
+    display: flex;
+    border-top: none;
+}
+
+#description input {
+    height: 1.3rem;
+    width: -webkit-fill-available;
+}
+
+#date {
+    border-left: 1px solid var(--primary-border-color);
+}

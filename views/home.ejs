@@ -10,17 +10,36 @@
 </head>
 <body>
     <div class = "wrapper">
-        <h1>TODO App</h1>
-        <div>
-            <form action="/create-task" method="POST">
-                <label for="description">Description</label>
-                <textarea id="description" name="description" rows="4" cols="50"></textarea>
+        <main class = "section">
+            <h1 class = "heading">TODO App</h1>
 
-                <input type="date" name="date" required>
-
+            <form action="/create-task" method="post">
+                <div class = 'field'>
+                    <div id = "description" class="field-section">
+                        <div class = "field-name">Description</div>
+                        <input type="text" name="description" placeholder="What do you need to do?" required>
+                    </div>
+                </div>
+                
+                <div id = "other-details" class = "field">
+                    <div id = "category" class="field-section">
+                        <div class = "field-name">Category</div>
+                        <select name="category">
+                            <option value="" disabled selected>Select your option</option>
+                            <% for (let i of categoryOption) { %>
+                                <option value= "<%= i %>"> <%= i %> </option>
+                            <% } %>
+                        </select> 
+                    </div>
+                    <div id="date" class="field-section">
+                        <div class="field-name">Due Date</div>
+                        <input type="date" name="date">
+                    </div>
+                </div>
+                
                 <button type="submit">ADD TASK</button>
             </form>
-        </div>
+        </main>
     </div>
 </body>
 </html>
