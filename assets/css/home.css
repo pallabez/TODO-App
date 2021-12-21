@@ -1,6 +1,5 @@
 :root {
     --primary-border-color :rgba(83, 92, 87, 0.13);
-    --primary-color: rgb(83, 92, 87);
     --primary-background-color: #efefef;
     --secondary-background-color: #5a5a5a;
 }
@@ -16,10 +15,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "system-ui";
-    color: var(--primary-color);
 }
-
-
 
 .wrapper {
     background-color: var(--secondary-background-color);
@@ -83,3 +79,27 @@
     border-left: 1px solid var(--primary-border-color);
 }
 
+
+#add-btn {
+    position: relative;
+    height: 5rem;
+}
+
+.btn {
+    padding: 10px;
+    border: 0;
+    font-size: 1.3rem;
+}
+
+#add-btn .btn {
+    background-color: rgb(211, 58, 58);
+    color: var(--primary-background-color);
+    
+    position: absolute;
+    left: 50%;
+    transform: translateX(-120%);
+}
+
+#add-btn .btn:hover {
+    background-color: rgb(190, 48, 48);
+}

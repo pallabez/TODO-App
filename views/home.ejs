@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
+    <script src="https://kit.fontawesome.com/a44b4d40da.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="/css/home.css">
 </head>
@@ -13,7 +14,7 @@
         <main class = "section">
             <h1 class = "heading">TODO App</h1>
 
-            <form action="/create-task" method="post">
+            <form action="/create-task" method="post" autocomplete="off">
                 <div class = 'field'>
                     <div id = "description" class="field-section">
                         <div class = "field-name">Description</div>
@@ -37,7 +38,10 @@
                     </div>
                 </div>
                 
-                <button type="submit" class="btn">ADD TASK</button>
+                <div id = "add-btn" class = "field-section">
+                    
+                    <button type="submit" class="btn"><i class="fas fa-plus"></i>ADD TASK</button>
+                </div>
             </form>
         </main>
     </div>
