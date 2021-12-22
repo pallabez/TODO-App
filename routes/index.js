@@ -5,8 +5,6 @@ const homeController = require('../controllers/home_controller');
 
 router.get('/', homeController.home);
 
-router.post('/create-task', function(req, res) {
-    console.log(req.body);
-});
+router.post('/create-task', homeController.createTask);
 
 module.exports = router;
