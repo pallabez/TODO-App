@@ -29,5 +29,14 @@ module.exports.createTask = function(req, res) {
 }
 
 module.exports.deleteTask = function(req, res) {
-    console.log(req.body);
+    let list = req.body.task;
+    for(let i of list) {
+        Task.findByIdAndDelete(i, function(err) {
+            if(err) {
+                console.log("Error in deleting the task: ", i);
+                return;
+            }        
+        });
+    }
+    return res.redirect('back');
 }
