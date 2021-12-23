@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
+    <title>TODO App</title>
     <script src="https://kit.fontawesome.com/a44b4d40da.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="/css/home.css">
@@ -27,7 +27,7 @@
                         <div class = "field-name">Category</div>
                         <select name="category">
                             <option disabled selected> Select your option </option>
-                            <% for (let i of categoryOption) { %>
+                            <% for (let i of category_option) { %>
                                 <option value= "<%= i %>"> <%= i %> </option>
                             <% } %>
                         </select> 
@@ -43,10 +43,22 @@
                 </div>
             </form>
             <form action="/delete-task" method="post"> 
-                <div class="field">
-                    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                    <label for="vehicle1">I have a bike</label><br>
+                <% for(let i of task_list) {%>
+                <div class = "field">
+                    <input type="checkbox" value="<%= i._id %>" name="task">
+                    <label for="<%= i._id %>">
+                        <%= i.description %>
+                    </label>
+                    <div id="date" class="field-section">
+                        <div class="field-name">Due Date</div>
+                        <input type="date" name="date">
+                    </div>
                 </div>
+                <% } %>
+
+                <button type="submit" class="btn">
+                    DELETE TASK
+                </button>
             </form>
         </main>
     </div>
