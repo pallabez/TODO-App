@@ -14,7 +14,7 @@
         <main class = "section">
             <h1 class = "heading">TODO App</h1>
 
-            <form action="/create-task" method="post" autocomplete="off">
+            <form action="/create-task" method="post" autocomplete="off" id="create-form">
                 <div class = 'field'>
                     <div id = "description" class="field-section">
                         <div class = "field-name">Description</div>
@@ -42,18 +42,20 @@
                     <button type="submit" class="btn"><i class="fas fa-plus"></i>ADD TASK</button>
                 </div>
             </form>
-            <form action="/delete-task" method="post"> 
+            <form action="/delete-task" method="post" id="delete-form"> 
                 <% for(let i of task_list) {%>
-                <div class = "field">
-                    <input type="checkbox" value="<%= i._id %>" name="task">
-                    <label for="<%= i._id %>">
-                        <%= i.description %>
-                    </label>
+                <div class="field">
+                    <div class = "field-section task-list">
+                        <input type="checkbox" value="<%= i._id %>" name="task">
+                        <label for="<%= i._id %>">
+                            <%= i.description %>
+                        </label>
+                    </div>
                 </div>
                 <% } %>
 
                 <button type="submit" class="btn">
-                    DELETE TASK
+                    DELETE TASKS
                 </button>
             </form>
         </main>

@@ -107,3 +107,9 @@
 #add-btn .btn i{
     margin-right: 5px;
 }
+
+.task-list {
+    font-size: 1.3rem;
+}
+
+#delete-form {}
