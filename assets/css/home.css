@@ -2,6 +2,7 @@
     --primary-border-color :rgba(83, 92, 87, 0.13);
     --primary-background-color: #efefef;
     --secondary-background-color: #5a5a5a;
+    --primary-color: rgb(82, 83, 83);
 }
 
 ::placeholder {
@@ -122,6 +123,9 @@
     background-color: rgb(190, 48, 48);
 }
 
+
+/*----delete form----*/
+
 #delete-form .field .task-list {
     font-size: 1.3rem;
     display: flex;
@@ -130,6 +134,25 @@
 
 #delete-form .field .task-list input[type="checkbox"] {
     margin-right: 10px;
+}
+
+#delete-form .field .task-list .desc-and-date {
+    margin-right: auto;
+}
+
+#delete-form .field .task-list .desc-and-date .date{
+    color: var(--primary-color);
+    font-size: 0.8rem;
+}
+
+#delete-form .field .task-list .category {
+    width: 7rem;
+    background-color: grey;
+    color: var(--primary-background-color);
+
+    border-radius: 4px;
+    margin-right: 10px;
+    padding: 4px 0.8rem;
 }
 
 #delete-form button {

@@ -52,10 +52,15 @@
                         <input type="checkbox" value="<%= i._id %>" name="task">
                         <div class="desc-and-date">
                             <label for="<%= i._id %>"><%= i.description %></label>
-                            <span><%= i.date %></span>
+                            <% if(i.date) { %>
+                                <div class="date"> 
+                                    <i class="fas fa-calendar-week"></i>
+                                    <%= moment(i.date).format('Do MMMM, YYYY') %>
+                                </div>
+                            <% } %>
                         </div>
                         <div class="category">
-                            
+                            <%= i.category %>
                         </div>
                     </div>
                 </div>
@@ -68,5 +73,7 @@
             </form>
         </main>
     </div>
+    
+    <script src="/assets/js/home.js"></script>
 </body>
 </html>
