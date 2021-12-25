@@ -33,6 +33,12 @@
     padding: 1rem 0;
 }
 
+@media screen and (max-width: 760px) {
+    .wrapper .section {
+        width: 100%;
+    }
+}
+
 .wrapper .section > .heading {
     text-align: center;
 }
@@ -88,28 +94,52 @@
 .btn {
     padding: 10px;
     border: 0;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    color: var(--primary-background-color);
+    width: 180px;
+    border-radius: 5px;
 }
+
+.btn i{
+    margin-right: 5px;
+}
+
+.btn span {
+    display: inline-block;
+    margin: 0 auto;
+}
+
 
 #add-btn .btn {
     background-color: rgb(211, 58, 58);
-    color: var(--primary-background-color);
     
     position: absolute;
-    left: 50%;
-    transform: translateX(-120%);
+    left: 48%;
+    transform: translateX(-180px);
 }
 
 #add-btn .btn:hover {
     background-color: rgb(190, 48, 48);
 }
 
-#add-btn .btn i{
-    margin-right: 5px;
-}
-
-.task-list {
+#delete-form .field .task-list {
     font-size: 1.3rem;
+    display: flex;
+    align-items: center;
 }
 
-#delete-form {}
+#delete-form .field .task-list input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+#delete-form button {
+    position: absolute;
+    left: 50.5%;
+    top: 13.5rem;
+
+    background-color: slategray;
+}
+
+#delete-form button:hover {
+    background-color: rgb(85, 97, 109);
+}

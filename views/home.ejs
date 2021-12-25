@@ -39,7 +39,10 @@
                 </div>
                 
                 <div id = "add-btn" class = "field-section">         
-                    <button type="submit" class="btn"><i class="fas fa-plus"></i>ADD TASK</button>
+                    <button type="submit" class="btn">
+                        <i class="fas fa-plus"></i>
+                        <span>ADD TASK</span>
+                    </button>
                 </div>
             </form>
             <form action="/delete-task" method="post" id="delete-form"> 
@@ -47,15 +50,20 @@
                 <div class="field">
                     <div class = "field-section task-list">
                         <input type="checkbox" value="<%= i._id %>" name="task">
-                        <label for="<%= i._id %>">
-                            <%= i.description %>
-                        </label>
+                        <div class="desc-and-date">
+                            <label for="<%= i._id %>"><%= i.description %></label>
+                            <span><%= i.date %></span>
+                        </div>
+                        <div class="category">
+                            
+                        </div>
                     </div>
                 </div>
                 <% } %>
 
                 <button type="submit" class="btn">
-                    DELETE TASKS
+                    <i class="fas fa-trash-alt"></i>
+                    <span>DELETE TASKS</span>
                 </button>
             </form>
         </main>

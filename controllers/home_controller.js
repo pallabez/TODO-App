@@ -15,6 +15,7 @@ module.exports.home = function(req, res) {
 }
 
 module.exports.createTask = function(req, res) {
+    console.log(req.body.date);
     Task.create({
         description: req.body.description,
         category: req.body.category,
@@ -30,21 +31,16 @@ module.exports.createTask = function(req, res) {
 
 module.exports.deleteTask = function(req, res) {
     let list = req.body.task;
-    if(typeof(list) == "string") {
-        Task.findByIdAndDelete(list, function(err) {
+    if(typeof(list) == "string") list = [list];
+    
+    for(let i of list) {
+        Task.findByIdAndDelete(i, function(err) {
             if(err) {
                 console.log("Error in deleting the task: ", i);
-            }
+                return;
+            }        
         });
-    } else {
-        for(let i of list) {
-            Task.findByIdAndDelete(i, function(err) {
-                if(err) {
-                    console.log("Error in deleting the task: ", i);
-                    return;
-                }        
-            });
-        }
-    }
+    }   
+    
     return res.redirect('back');
 }
