@@ -28,7 +28,7 @@
                         <select name="category">
                             <option disabled selected> Select your option </option>
                             <% for (let i of category_option) { %>
-                                <option value= "<%= i %>"> <%= i %> </option>
+                                <option value="<%= i.name %> <%= i.color %>" class="option"> <%= i.name %> </option>
                             <% } %>
                         </select> 
                     </div>
@@ -59,7 +59,7 @@
                                 </div>
                             <% } %>
                         </div>
-                        <div class="category">
+                        <div class="category" color="<%= i.color %>">
                             <%= i.category %>
                         </div>
                     </div>
@@ -74,6 +74,6 @@
         </main>
     </div>
     
-    <script src="/assets/js/home.js"></script>
+    <script src="/js/home.js"></script>
 </body>
 </html>

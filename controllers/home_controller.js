@@ -1,5 +1,6 @@
 const db = require('../config/mongoose');
 const Task = require('../models/task');
+const categoryOption = require('../assets/js/category-option');
 
 module.exports.home = function(req, res) {
     Task.find({}, function(err, task) {
@@ -9,16 +10,18 @@ module.exports.home = function(req, res) {
         }
         return res.render('home', {
             task_list: task,
-            category_option: ["Personal","Work","School","Other"],
+            category_option: categoryOption.category,
         });
     });
 }
 
 module.exports.createTask = function(req, res) {
+    let arr=req.body.category.split(" ");
     Task.create({
         description: req.body.description,
-        category: req.body.category,
+        category: arr[0],
         date: req.body.date,
+        color: arr[1],
     }, function(err, newTask) {
         if(err) {
             console.log("Error in creating Task.");
@@ -30,7 +33,8 @@ module.exports.createTask = function(req, res) {
 
 module.exports.deleteTask = function(req, res) {
     let list = req.body.task;
-    
+    if(!list) return res.redirect('back');
+
     if(typeof(list) == "string") list = [list];
     
     for(let i of list) {

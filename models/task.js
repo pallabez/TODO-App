@@ -10,6 +10,9 @@ const taskSchema = new mongoose.Schema({
     },
     date: {
         type: Date,
+    },
+    color: {
+        type: String,
     }
 });
 
