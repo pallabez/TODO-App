@@ -1,6 +1,7 @@
 # TODO App
 
 Code will be deployed very soon!
+![Demo image](/assets/img/Demo.png)
 
 ## Running the project
 
